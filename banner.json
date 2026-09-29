@@ -1,0 +1,68 @@
+{
+  "repo": "picokit-43-swd-breakpoints",
+  "eyebrow": "PICOKIT // LESSON 43",
+  "title": "PICOKIT // SWD BREAKPOINTS",
+  "subtitle": "DEBUG PROBE BREAKPOINT + SWD VARIABLE READ",
+  "accent": "#24FFF7",
+  "dim": "#169E99",
+  "white": "#D5F6FD",
+  "cyan": "#7FD8E0",
+  "bg": "#021111",
+  "bg_edge": "#000504",
+  "icon": "bug",
+  "panel_status": "CORE halted  ·  BP set  ·  g_count = 7",
+  "chips": [
+    {
+      "label": "NODE",
+      "value": "43"
+    },
+    {
+      "label": "BREAK",
+      "value": "monitor_count_tick"
+    },
+    {
+      "label": "VAR",
+      "value": "g_count"
+    },
+    {
+      "label": "RADIO",
+      "value": "-30 dBm"
+    }
+  ],
+  "terminal": [
+    "$ openocd -f interface/cmsis-dap.cfg -f target/rp2350.cfg",
+    "[*] node 00043  seq 2  HEARTBEAT  AEAD ok",
+    "[*] heartbeat body {\"n\":43,\"s\":2,\"c\":7}",
+    "[+] break monitor_count_tick  hit  core halted",
+    "[+] print g_count  $1 = 7  continue"
+  ],
+  "categories": [
+    "SWD",
+    "BREAK",
+    "COUNTER",
+    "LINK"
+  ],
+  "cards": [
+    {
+      "tag": "BP-01",
+      "label": "function",
+      "value": "count_tick"
+    },
+    {
+      "tag": "BP-02",
+      "label": "variable",
+      "value": "g_count"
+    },
+    {
+      "tag": "BP-03",
+      "label": "value",
+      "value": "7"
+    }
+  ],
+  "footer": [
+    "1 NODE  ·  1 GATEWAY  ·  2 WAY LORA  ·  NO PLAINTEXT",
+    "PICOKIT SERIES  ·  BREAK  ·  READ  ·  RADIO  ==[ SWD ]=="
+  ],
+  "layout": "terminal",
+  "stat": "43"
+}
